@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <table border="1">
+            <thead>
+                <th>STUDENT ID </th>
+                <th><a href="/sort/name">First Name </a> </th>
+                <th><a href="/sort/name">Last Name </a> </th>
+                <th><a href="/sort/age">Age </a></th>
+                <th>Email </th>
+                <th><a href="/sort/fees">Department</a> </th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for student in student_list %}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.First_Name}}</td>
+                  <td>{{student.Last_Name}}</td>
+                    <td>{{student.Age}}</td>
+                    <td>{{student.Email}}</td>
+                    <td>{{student.Dept}}</td>
+                    <td><a href="/edit/{{student.id}}"> EDIT </a>|
+                        <a href="/delete/{{student.id}}">DELETE</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+    </table>
+</body>
+</html>
